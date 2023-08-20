@@ -9,7 +9,7 @@ export const validateLogin = createAsyncThunk(
                 password,
             };
             const body=JSON.stringify(reqObject);
-            const response = await fetch('https://you-shd-manage-tasks.herokuapp.com/api/login', {
+            const response = await fetch('https://task-management-backend-i505.onrender.com/api/login', {
                 method: "post",
                 headers: { "Content-Type": "application/json" },
                 body,
@@ -37,7 +37,7 @@ export const validateSignup = createAsyncThunk(
                 password,
             };
             const body=JSON.stringify(reqObject);
-            const response = await fetch('https://you-shd-manage-tasks.herokuapp.com/api/signup',{
+            const response = await fetch('https://task-management-backend-i505.onrender.com/api/signup',{
                 method: "post",
                 headers: { "Content-Type": "application/json" },
                 body,

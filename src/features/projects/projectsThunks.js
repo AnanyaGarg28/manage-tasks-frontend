@@ -4,7 +4,7 @@ export const loadProjects = createAsyncThunk(
     'projects/loadProjects',
     async () => {
         try {
-            const response = await fetch('https://you-shd-manage-tasks.herokuapp.com/api/projects')
+            const response = await fetch('https://task-management-backend-i505.onrender.com/api/projects')
             .then(res=>res.json());
             return response;
         } catch(error) {
@@ -25,7 +25,7 @@ export const addProject = createAsyncThunk(
                 status,
             };
             const reqBody = JSON.stringify(task);
-            const response = await fetch('https://you-shd-manage-tasks.herokuapp.com/api/add-project', {
+            const response = await fetch('https://task-management-backend-i505.onrender.com/api/add-project', {
                 method: 'post',
                 headers: {"Content-Type": 'application/json'}, 
                 body: reqBody,
@@ -50,7 +50,7 @@ export const deleteProject = createAsyncThunk(
     'projects/deleteProject',
     async ({ _id }, { getState }) => {
         try {
-            await fetch(`https://you-shd-manage-tasks.herokuapp.com/api/delete-project/${_id}`, {
+            await fetch(`https://task-management-backend-i505.onrender.com/api/delete-project/${_id}`, {
                 method: 'post',
             }).then(res => res.json());
             return _id;
