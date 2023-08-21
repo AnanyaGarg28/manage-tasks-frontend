@@ -14,7 +14,7 @@ export const validateLogin = createAsyncThunk(
                 headers: { "Content-Type": "application/json" },
                 body,
             }).then(res => {
-                if(res.status!==200)    throw `${res.status}`;
+                if(res.status!==200) throw new Error(`${res.status}`);
                 return res;
             }).then(res=>res.json());
             const { token } = response;
@@ -42,7 +42,7 @@ export const validateSignup = createAsyncThunk(
                 headers: { "Content-Type": "application/json" },
                 body,
             }).then(res => {
-                if(res.status!==200)    throw `${res.status}`;
+                if(res.status!==200)  throw new Error(`${res.status}`);
                 return res;
             }).then(res=>res.json());
             const { token } = response;
